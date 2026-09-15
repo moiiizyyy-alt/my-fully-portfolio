@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  --bg-primary: #090a10;
+  --bg-secondary: #0f111c;
+  --bg-card: rgba(18, 20, 32, 0.85);
+  --bg-card-hover: rgba(26, 30, 48, 0.95);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(0, 242, 254, 0.35);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --accent-cyan: #00f2fe;
+  --accent-blue: #4facfe;
+  --accent-purple: #8a2be2;
+  --accent-pink: #ff007f;
+  --accent-yellow: #ffd166;
+  --accent-green: #00e676;
+  --accent-orange: #ff7b00;
+
+  --comic-yellow: #ffe600;
+  --comic-pink: #ff2a85;
+  --comic-cyan: #00f5ff;
+  --comic-dark: #000000;
+
+  --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+
+  --shadow-comic-cyan: 4px 4px 0px #00f5ff;
+  --shadow-comic-yellow: 4px 4px 0px #ffe600;
+  --shadow-comic-pink: 4px 4px 0px #ff2a85;
+  --shadow-comic-dark: 4px 4px 0px #000000;
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --shadow-glow: 0 0 25px rgba(0, 242, 254, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+  padding-bottom: 100px; /* Space for bottom floating navbar */
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(138, 43, 226, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 85% 35%, rgba(0, 242, 254, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(255, 0, 127, 0.08) 0%, transparent 45%),
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2238;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-cyan);
+  color: #000;
+}
+
+/* Comic Badge Utilities */
+.comicBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  border: 2px solid #000;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
+  box-shadow: 3px 3px 0px #000;
+}
+
+.comicBadgeYellow {
+  background: var(--comic-yellow);
+  color: #000;
+  box-shadow: var(--shadow-comic-dark);
+}
+
+.comicBadgePink {
+  background: var(--comic-pink);
+  color: #fff;
+  box-shadow: var(--shadow-comic-dark);
+}
+
+.comicBadgeCyan {
+  background: var(--comic-cyan);
+  color: #000;
+  box-shadow: var(--shadow-comic-dark);
+}
+
+.comicBadge:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #000;
+}
+
+/* Speech Bubble Style */
+.speechBubble {
+  position: relative;
+  background: #ffffff;
+  color: #000;
+  border: 3px solid #000;
+  border-radius: 16px;
+  padding: 10px 18px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  box-shadow: 4px 4px 0px #000;
+  display: inline-flex;
+  align-items: center;
+}
+
+.speechBubble::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 24px;
+  border-width: 12px 12px 0;
+  border-style: solid;
+  border-color: #ffffff transparent;
+  display: block;
+  width: 0;
+}
+
+.speechBubble::before {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 22px;
+  border-width: 15px 14px 0;
+  border-style: solid;
+  border-color: #000000 transparent;
+  display: block;
+  width: 0;
+}
+
+/* Glow & Glass Cards */
+.glassCard {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: var(--shadow-glass);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glassCard:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-glow), var(--shadow-glass);
+  transform: translateY(-3px);
+}
+
+/* Neon Gradient Text */
+.gradientText {
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #8a2be2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradientTextWarm {
+  background: linear-gradient(135deg, #ffe600 0%, #ff5470 50%, #ff007f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animateFloat {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animatePulseGlow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
