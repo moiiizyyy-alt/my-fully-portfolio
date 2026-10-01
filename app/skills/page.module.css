@@ -13,7 +13,7 @@
   font-family: var(--font-heading);
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   font-weight: 900;
-  margin-top: 14px;
+  margin-top: 16px;
   margin-bottom: 12px;
 }
 
@@ -26,63 +26,64 @@
 
 /* Category Sections */
 .categorySection {
-  margin-bottom: 50px;
+  margin-bottom: 56px;
 }
 
 .categoryHeader {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
 }
 
 .categoryTitle {
   font-family: var(--font-heading);
-  font-size: 1.6rem;
+  font-size: 1.65rem;
   font-weight: 800;
   color: #ffffff;
 }
 
 .skillsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
 }
 
+/* 3D Clay Skill Card */
 .skillCard {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 24px;
-  backdrop-filter: blur(14px);
+  background: linear-gradient(145deg, #1b2031, #131725);
+  border: 1px solid var(--border-subtle);
+  border-radius: 28px;
+  padding: 26px;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--clay-card-shadow);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   overflow: hidden;
 }
 
 .skillCard:hover {
-  transform: translateY(-5px);
-  border-color: rgba(0, 242, 254, 0.4);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 242, 254, 0.15);
+  transform: translateY(-5px) scale(1.01);
+  border-color: var(--border-clay-highlight);
+  box-shadow: var(--clay-card-hover-shadow);
 }
 
 .skillTop {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .skillNameRow {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .skillIcon {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 .skillName {
@@ -92,52 +93,71 @@
   color: #fff;
 }
 
+/* Puffy Clay Grip Badge */
 .gripBadge {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 800;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: 9999px;
-  background: rgba(0, 242, 254, 0.12);
-  border: 1px solid rgba(0, 242, 254, 0.3);
-  color: var(--accent-cyan);
+  background: linear-gradient(145deg, #1fe3ff, #0284c7);
+  color: #032030;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    2px 3px 8px rgba(2, 132, 199, 0.3),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.6),
+    inset -1px -1px 2px rgba(3, 105, 161, 0.4);
 }
 
-/* Grip Progress Bar */
+/* Sunken Clay Progress Bar Track */
 .progressContainer {
   width: 100%;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.08);
+  height: 8px;
+  background: #0e121c;
   border-radius: 9999px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   overflow: hidden;
+  box-shadow: 
+    inset 2px 2px 4px rgba(0, 0, 0, 0.6),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.03);
 }
 
+/* 3D Puffy Clay Progress Bar Fill */
 .progressBar {
   height: 100%;
   border-radius: 9999px;
-  background: linear-gradient(90deg, #00f2fe, #4facfe, #8a2be2);
+  background: linear-gradient(90deg, #00e5ff, #38bdf8, #a855f7);
+  box-shadow: 
+    inset 1px 1px 2px rgba(255, 255, 255, 0.6),
+    0 2px 8px rgba(0, 216, 246, 0.35);
 }
 
 .whatItDoes {
   color: #94a3b8;
-  font-size: 0.88rem;
-  line-height: 1.6;
-  margin-bottom: 12px;
+  font-size: 0.89rem;
+  line-height: 1.62;
+  margin-bottom: 16px;
 }
 
+/* Sunken Clay Grip Box */
 .myGripBox {
   margin-top: auto;
-  background: rgba(255, 255, 255, 0.03);
-  border-left: 3px solid var(--comic-yellow);
-  padding: 10px 14px;
-  border-radius: 0 10px 10px 0;
+  background: #0f131f;
+  border-left: 3.5px solid var(--clay-yellow);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 12px 16px;
+  border-radius: 0 16px 16px 0;
+  box-shadow: 
+    inset 2px 2px 5px rgba(0, 0, 0, 0.5),
+    inset -1px -1px 3px rgba(255, 255, 255, 0.02);
 }
 
 .myGripLabel {
   font-family: var(--font-heading);
   font-size: 0.78rem;
   font-weight: 800;
-  color: var(--comic-yellow);
+  color: var(--clay-yellow);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 4px;
@@ -145,8 +165,8 @@
 
 .myGripText {
   color: #e2e8f0;
-  font-size: 0.86rem;
-  line-height: 1.5;
+  font-size: 0.87rem;
+  line-height: 1.55;
 }
 
 @media (max-width: 640px) {

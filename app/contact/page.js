@@ -52,13 +52,13 @@ export default function ContactPage() {
               <span className="comicBadge comicBadgeYellow">
                 ⚡ Fastest Response
               </span>
-              <span style={{ fontSize: "0.8rem", color: "#25d366", fontWeight: 700 }}>
+              <span style={{ fontSize: "0.85rem", color: "#22c55e", fontWeight: 800 }}>
                 ● Active Now
               </span>
             </div>
 
             <div className={styles.channelMainRow}>
-              <div className={styles.channelIcon} style={{ background: "rgba(37, 211, 102, 0.15)", color: "#25d366" }}>
+              <div className={styles.channelIcon} style={{ background: "linear-gradient(145deg, #2ae070, #15803d)", color: "#03240e" }}>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.477-.15-.678.15-.2.301-.778.978-.954 1.179-.176.2-.351.226-.652.075-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.783-1.676-2.084-.176-.301-.019-.464.132-.614.136-.135.301-.351.452-.527.15-.176.2-.301.3-.501.101-.2.05-.376-.025-.526-.075-.15-.677-1.633-.928-2.238-.244-.589-.493-.509-.678-.518l-.578-.01c-.2 0-.527.075-.803.376s-1.054 1.029-1.054 2.508c0 1.48 1.079 2.909 1.23 3.109.15.2 2.124 3.243 5.145 4.549.719.311 1.28.497 1.718.637.723.23 1.381.197 1.902.12.58-.087 1.78-.727 2.031-1.43.251-.702.251-1.303.176-1.43-.075-.126-.276-.201-.577-.351z"/>
                   <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.486 2 2 6.486 2 12c0 1.977.575 3.824 1.572 5.385L2.096 22l4.764-1.438A9.957 9.957 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm0 18.2a8.16 8.16 0 01-4.223-1.168l-.303-.18-2.825.853.864-2.735-.198-.314A8.156 8.156 0 013.8 12c0-4.522 3.678-8.2 8.2-8.2s8.2 3.678 8.2 8.2-3.678 8.2-8.2 8.2z"/>
@@ -93,8 +93,8 @@ export default function ContactPage() {
             </div>
 
             <div className={styles.channelMainRow}>
-              <div className={styles.channelIcon} style={{ background: "rgba(0, 242, 254, 0.15)", color: "#00f2fe" }}>
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <div className={styles.channelIcon} style={{ background: "linear-gradient(145deg, #1fe3ff, #0284c7)", color: "#032030" }}>
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                   <rect width="20" height="16" x="2" y="4" rx="2"/>
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                 </svg>
@@ -106,7 +106,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
               <a
                 href="mailto:moiiizyyy@gmail.com"
                 className={`${styles.channelBtn} ${styles.emailBtnStyle}`}
@@ -116,9 +116,9 @@ export default function ContactPage() {
               </a>
 
               <button
+                type="button"
                 onClick={handleCopyEmail}
-                className={`${styles.channelBtn} ${styles.emailBtnStyle}`}
-                style={{ background: "#ffffff" }}
+                className={`${styles.channelBtn} ${styles.copyBtnStyle}`}
               >
                 <span>{copied ? "Copied! ✓" : "Copy Address"}</span>
               </button>
@@ -129,25 +129,34 @@ export default function ContactPage() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
             {/* Fiverr */}
             <div className={styles.channelCard}>
+              <div className={styles.miniCardTop}>
+                <div className={styles.fiverrPill}>Fiverr Pro</div>
+              </div>
               <h3 className={styles.channelTitle}>Fiverr Seller</h3>
-              <p style={{ color: "#94a3b8", fontSize: "0.85rem" }}>
-                Order verified client gigs
+              <p style={{ color: "#94a3b8", fontSize: "0.86rem" }}>
+                Order verified client gigs & custom milestone projects
               </p>
               <a
-                href="https://www.fiverr.com/sellers/muhammad_moiz_9/"
+                href="https://www.fiverr.com/sellers/muhammad_moiz_9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.channelBtn} ${styles.fiverrBtnStyle}`}
               >
                 <span>Fiverr Profile</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
               </a>
             </div>
 
             {/* GitHub */}
             <div className={styles.channelCard}>
-              <h3 className={styles.channelTitle}>GitHub Repo</h3>
-              <p style={{ color: "#94a3b8", fontSize: "0.85rem" }}>
-                Explore source code
+              <div className={styles.miniCardTop}>
+                <div className={styles.githubPill}>Code Repo</div>
+              </div>
+              <h3 className={styles.channelTitle}>GitHub Profile</h3>
+              <p style={{ color: "#94a3b8", fontSize: "0.86rem" }}>
+                Explore open-source repositories & project code
               </p>
               <a
                 href="https://github.com/moiiizyyy-alt"
@@ -156,6 +165,9 @@ export default function ContactPage() {
                 className={`${styles.channelBtn} ${styles.githubBtnStyle}`}
               >
                 <span>GitHub Profile</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
               </a>
             </div>
           </div>

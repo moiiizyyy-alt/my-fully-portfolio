@@ -71,8 +71,8 @@ const ALL_PROJECTS = [
     badge: "Featured",
     badgeType: "fullstack",
     description:
-      "My own personal developer portfolio built with Next.js App Router. Full-stack, multi-page, polished with smooth micro-animations, comic badge aesthetics, dark mode glassmorphism, and instant WhatsApp/GitHub/Fiverr connectivity.",
-    tags: ["Next.js 16", "React 19", "CSS Modules", "Glassmorphism", "SEO"],
+      "My own personal developer portfolio built with Next.js App Router. Full-stack, multi-page, polished with smooth micro-animations, claymorphism 3D aesthetics, tactile buttons, and instant WhatsApp/GitHub/Fiverr connectivity.",
+    tags: ["Next.js 16", "React 19", "CSS Modules", "Claymorphism", "SEO"],
     live: "/",
     github: "https://github.com/moiiizyyy-alt",
   },

@@ -1,40 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap');
 
 :root {
-  --bg-primary: #090a10;
-  --bg-secondary: #0f111c;
-  --bg-card: rgba(18, 20, 32, 0.85);
-  --bg-card-hover: rgba(26, 30, 48, 0.95);
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-glow: rgba(0, 242, 254, 0.35);
-  
+  /* Claymorphism Core Palette */
+  --bg-primary: #0d111a;
+  --bg-secondary: #131824;
+  --bg-clay-surface: #181d2c;
+  --bg-clay-card: #161b29;
+  --bg-clay-card-light: #1e2436;
+  --bg-clay-inset: #0e121c;
+
+  /* Clay Dual Shadow Tokens */
+  --clay-card-shadow: 
+    12px 14px 28px rgba(0, 0, 0, 0.48),
+    -6px -6px 18px rgba(255, 255, 255, 0.03),
+    inset 2.5px 2.5px 4px rgba(255, 255, 255, 0.1),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.45);
+
+  --clay-card-hover-shadow: 
+    16px 20px 38px rgba(0, 0, 0, 0.6),
+    -8px -8px 22px rgba(255, 255, 255, 0.05),
+    inset 2.5px 2.5px 4px rgba(255, 255, 255, 0.16),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.45);
+
+  --clay-inset-shadow: 
+    inset 4px 4px 9px rgba(0, 0, 0, 0.55),
+    inset -3px -3px 7px rgba(255, 255, 255, 0.03);
+
+  --clay-btn-shadow: 
+    6px 8px 18px rgba(0, 0, 0, 0.35),
+    -3px -3px 8px rgba(255, 255, 255, 0.04),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.4),
+    inset -2.5px -2.5px 5px rgba(0, 0, 0, 0.3);
+
+  --clay-btn-active-shadow: 
+    2px 3px 6px rgba(0, 0, 0, 0.3),
+    inset 3px 3px 6px rgba(0, 0, 0, 0.45),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.2);
+
+  /* Border & Highlights */
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-clay-highlight: rgba(255, 255, 255, 0.14);
+
+  /* Text Colors */
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
+  --text-bright: #ffffff;
 
-  --accent-cyan: #00f2fe;
-  --accent-blue: #4facfe;
-  --accent-purple: #8a2be2;
-  --accent-pink: #ff007f;
-  --accent-yellow: #ffd166;
-  --accent-green: #00e676;
-  --accent-orange: #ff7b00;
+  /* Clay Accent Colors */
+  --clay-cyan: #00d8f6;
+  --clay-cyan-dark: #0284c7;
+  --clay-yellow: #ffc837;
+  --clay-yellow-dark: #d97706;
+  --clay-pink: #ff4d88;
+  --clay-pink-dark: #db2777;
+  --clay-green: #22c55e;
+  --clay-green-dark: #15803d;
+  --clay-purple: #a855f7;
+  --clay-purple-dark: #7e22ce;
+  --clay-orange: #fb923c;
+  --clay-fiverr: #1dbf73;
+  --clay-fiverr-dark: #128a50;
 
-  --comic-yellow: #ffe600;
-  --comic-pink: #ff2a85;
-  --comic-cyan: #00f5ff;
-  --comic-dark: #000000;
-
-  --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif;
+  /* Typography */
+  --font-main: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
   --font-mono: 'Space Grotesk', monospace;
-
-  --shadow-comic-cyan: 4px 4px 0px #00f5ff;
-  --shadow-comic-yellow: 4px 4px 0px #ffe600;
-  --shadow-comic-pink: 4px 4px 0px #ff2a85;
-  --shadow-comic-dark: 4px 4px 0px #000000;
-  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  --shadow-glow: 0 0 25px rgba(0, 242, 254, 0.25);
 }
 
 * {
@@ -55,172 +86,205 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
-  line-height: 1.6;
-  padding-bottom: 100px; /* Space for bottom floating navbar */
+  line-height: 1.65;
+  padding-bottom: 120px; /* Generous space for floating clay navbar */
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(138, 43, 226, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 85% 35%, rgba(0, 242, 254, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 50% 80%, rgba(255, 0, 127, 0.08) 0%, transparent 45%),
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    radial-gradient(ellipse 600px 600px at 10% 10%, rgba(0, 216, 246, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 550px 550px at 90% 25%, rgba(168, 85, 247, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 650px 650px at 50% 70%, rgba(255, 77, 136, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 20% 90%, rgba(34, 197, 94, 0.05) 0%, transparent 70%);
+  background-attachment: fixed;
+}
+
+/* Ambient Clay Glow Accents */
+body::before {
+  content: '';
+  position: fixed;
+  top: -200px;
+  right: 10%;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 216, 246, 0.1) 0%, rgba(0, 216, 246, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(40px);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 50px;
+  left: 5%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, rgba(168, 85, 247, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(50px);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e2238;
-  border-radius: 4px;
+  background: #23293d;
+  border-radius: 9999px;
+  border: 2px solid var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-cyan);
+  background: var(--clay-cyan);
 }
 
 /* Selection */
 ::selection {
-  background: var(--accent-cyan);
-  color: #000;
+  background: var(--clay-cyan);
+  color: #031e2b;
 }
 
-/* Comic Badge Utilities */
+/* ========================================================
+   CLAYMORPHISM REUSABLE BADGES & UTILITIES
+   ======================================================== */
+
+.clayBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  font-size: 0.88rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
+}
+
+/* Yellow Clay Badge */
+.comicBadgeYellow,
+.clayBadgeYellow {
+  background: linear-gradient(145deg, #ffd33d, #f59e0b);
+  color: #261600;
+  box-shadow: 
+    4px 6px 14px rgba(245, 158, 11, 0.35),
+    -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.65),
+    inset -2.5px -2.5px 5px rgba(180, 83, 9, 0.45);
+}
+
+/* Pink Clay Badge */
+.comicBadgePink,
+.clayBadgePink {
+  background: linear-gradient(145deg, #ff5c98, #e11d48);
+  color: #ffffff;
+  box-shadow: 
+    4px 6px 14px rgba(225, 29, 72, 0.35),
+    -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.55),
+    inset -2.5px -2.5px 5px rgba(159, 18, 57, 0.45);
+}
+
+/* Cyan Clay Badge */
+.comicBadgeCyan,
+.clayBadgeCyan {
+  background: linear-gradient(145deg, #1fe3ff, #0284c7);
+  color: #032030;
+  box-shadow: 
+    4px 6px 14px rgba(2, 132, 199, 0.35),
+    -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.65),
+    inset -2.5px -2.5px 5px rgba(3, 105, 161, 0.45);
+}
+
+/* Green Clay Badge */
+.comicBadgeGreen,
+.clayBadgeGreen {
+  background: linear-gradient(145deg, #2ae070, #15803d);
+  color: #03240e;
+  box-shadow: 
+    4px 6px 14px rgba(21, 128, 61, 0.35),
+    -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.6),
+    inset -2.5px -2.5px 5px rgba(14, 83, 40, 0.45);
+}
+
+/* Standard .comicBadge fallback mapped to ClayBadge */
 .comicBadge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
+  padding: 7px 16px;
   font-family: var(--font-heading);
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.85rem;
-  border-radius: 8px;
-  border: 2px solid #000;
-  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  letter-spacing: 0.3px;
+  font-size: 0.86rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   user-select: none;
-  box-shadow: 3px 3px 0px #000;
 }
 
-.comicBadgeYellow {
-  background: var(--comic-yellow);
-  color: #000;
-  box-shadow: var(--shadow-comic-dark);
+.comicBadge:hover,
+.clayBadge:hover {
+  transform: translateY(-2px) scale(1.03);
 }
 
-.comicBadgePink {
-  background: var(--comic-pink);
-  color: #fff;
-  box-shadow: var(--shadow-comic-dark);
-}
-
-.comicBadgeCyan {
-  background: var(--comic-cyan);
-  color: #000;
-  box-shadow: var(--shadow-comic-dark);
-}
-
-.comicBadge:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0px #000;
-}
-
-/* Speech Bubble Style */
-.speechBubble {
+/* Clay Card Base */
+.clayCard {
+  background: linear-gradient(145deg, #1b2132, #141825);
+  border-radius: 28px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--clay-card-shadow);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
-  background: #ffffff;
-  color: #000;
-  border: 3px solid #000;
-  border-radius: 16px;
-  padding: 10px 18px;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  box-shadow: 4px 4px 0px #000;
-  display: inline-flex;
-  align-items: center;
 }
 
-.speechBubble::after {
-  content: '';
-  position: absolute;
-  bottom: -12px;
-  left: 24px;
-  border-width: 12px 12px 0;
-  border-style: solid;
-  border-color: #ffffff transparent;
-  display: block;
-  width: 0;
+.clayCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-clay-highlight);
+  box-shadow: var(--clay-card-hover-shadow);
 }
 
-.speechBubble::before {
-  content: '';
-  position: absolute;
-  bottom: -16px;
-  left: 22px;
-  border-width: 15px 14px 0;
-  border-style: solid;
-  border-color: #000000 transparent;
-  display: block;
-  width: 0;
-}
-
-/* Glow & Glass Cards */
-.glassCard {
-  background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  box-shadow: var(--shadow-glass);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glassCard:hover {
-  border-color: var(--border-glow);
-  box-shadow: var(--shadow-glow), var(--shadow-glass);
-  transform: translateY(-3px);
-}
-
-/* Neon Gradient Text */
+/* Smooth Gradient Text */
 .gradientText {
-  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #8a2be2 100%);
+  background: linear-gradient(135deg, #00e5ff 0%, #38bdf8 50%, #c084fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: inline-block;
 }
 
 .gradientTextWarm {
-  background: linear-gradient(135deg, #ffe600 0%, #ff5470 50%, #ff007f 100%);
+  background: linear-gradient(135deg, #ffd33d 0%, #fb923c 50%, #ff4d88 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: inline-block;
 }
 
-/* Animations */
+/* Tactile Animations */
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-8px) rotate(1deg);
+    transform: translateY(-8px);
   }
 }
 
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.4), inset 1px 1px 2px rgba(255,255,255,0.4);
   }
   50% {
-    box-shadow: 0 0 30px rgba(0, 242, 254, 0.6);
+    box-shadow: 0 0 22px rgba(34, 197, 94, 0.8), inset 1px 1px 2px rgba(255,255,255,0.7);
   }
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
 }
 
 .animateFloat {
@@ -228,5 +292,5 @@ body {
 }
 
 .animatePulseGlow {
-  animation: pulseGlow 2.5s ease-in-out infinite;
+  animation: pulseGlow 2s ease-in-out infinite;
 }

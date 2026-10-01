@@ -13,7 +13,7 @@
   font-family: var(--font-heading);
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   font-weight: 900;
-  margin-top: 14px;
+  margin-top: 16px;
   margin-bottom: 12px;
 }
 
@@ -24,116 +24,150 @@
   margin: 0 auto;
 }
 
-/* Filter Controls */
+/* Filter Controls - Puffy Clay Pills */
 .filterBar {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 40px;
 }
 
 .filterBtn {
-  background: rgba(18, 20, 32, 0.85);
-  border: 1px solid var(--border-color);
+  background: linear-gradient(145deg, #1d2335, #141724);
+  border: 1px solid var(--border-subtle);
   color: #94a3b8;
-  padding: 8px 18px;
+  padding: 10px 22px;
   border-radius: 9999px;
   font-family: var(--font-heading);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.92rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    4px 6px 14px rgba(0, 0, 0, 0.35),
+    -2px -2px 6px rgba(255, 255, 255, 0.02),
+    inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.1),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
 }
 
 .filterBtn:hover {
   color: #ffffff;
-  border-color: rgba(0, 242, 254, 0.4);
   transform: translateY(-2px);
+  border-color: var(--border-clay-highlight);
+  box-shadow: 
+    6px 10px 20px rgba(0, 0, 0, 0.45),
+    inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.15);
 }
 
+.filterBtn:active {
+  transform: translateY(2px) scale(0.97);
+}
+
+/* Puffed Active Clay Filter Pill */
 .activeFilter {
-  background: var(--comic-cyan) !important;
-  color: #000000 !important;
+  background: linear-gradient(145deg, #1fe3ff, #0284c7) !important;
+  color: #032030 !important;
   font-weight: 800;
-  border: 2px solid #000 !important;
-  box-shadow: 3px 3px 0px #000;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 
+    4px 6px 16px rgba(2, 132, 199, 0.45),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.7),
+    inset -2.5px -2.5px 5px rgba(3, 105, 161, 0.5) !important;
 }
 
 /* Projects Grid */
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
 }
 
+/* 3D Clay Project Card */
 .projectCard {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 22px;
+  background: linear-gradient(145deg, #1b2031, #131725);
+  border: 1px solid var(--border-subtle);
+  border-radius: 28px;
   padding: 28px;
   display: flex;
   flex-direction: column;
-  backdrop-filter: blur(14px);
   position: relative;
+  box-shadow: var(--clay-card-shadow);
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   overflow: hidden;
 }
 
 .projectCard:hover {
-  transform: translateY(-6px);
-  border-color: rgba(0, 242, 254, 0.5);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 242, 254, 0.2);
+  transform: translateY(-6px) scale(1.01);
+  border-color: var(--border-clay-highlight);
+  box-shadow: var(--clay-card-hover-shadow);
 }
 
 .cardTop {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 16px;
+  align-items: center;
+  margin-bottom: 18px;
 }
 
+/* Sunken Clay Project Number */
 .projectNumber {
   font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 800;
-  color: var(--accent-cyan);
-  background: rgba(0, 242, 254, 0.1);
-  border: 1px solid rgba(0, 242, 254, 0.25);
-  padding: 4px 10px;
-  border-radius: 8px;
+  color: var(--clay-cyan);
+  background: #101421;
+  border: 1px solid rgba(0, 216, 246, 0.2);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  box-shadow: 
+    inset 2px 2px 4px rgba(0, 0, 0, 0.5),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.03);
 }
 
+/* Puffy Clay Badges */
 .projectBadge {
   font-size: 0.78rem;
   font-weight: 800;
-  padding: 4px 10px;
-  border-radius: 6px;
-  border: 1.5px solid #000;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
-  box-shadow: 2px 2px 0px #000;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .badgeClient {
-  background: var(--comic-yellow);
-  color: #000;
+  background: linear-gradient(145deg, #ffd33d, #f59e0b);
+  color: #261600;
+  box-shadow: 
+    3px 4px 10px rgba(245, 158, 11, 0.35),
+    inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 4px rgba(180, 83, 9, 0.4);
 }
 
 .badgeFullStack {
-  background: var(--comic-pink);
-  color: #fff;
+  background: linear-gradient(145deg, #ff5c98, #e11d48);
+  color: #ffffff;
+  box-shadow: 
+    3px 4px 10px rgba(225, 29, 72, 0.35),
+    inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.55),
+    inset -2px -2px 4px rgba(159, 18, 57, 0.4);
 }
 
 .badgeDesign {
-  background: var(--comic-cyan);
-  color: #000;
+  background: linear-gradient(145deg, #1fe3ff, #0284c7);
+  color: #032030;
+  box-shadow: 
+    3px 4px 10px rgba(2, 132, 199, 0.35),
+    inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 4px rgba(3, 105, 161, 0.4);
 }
 
 .projectName {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   font-weight: 800;
   color: #ffffff;
   margin-bottom: 12px;
@@ -142,64 +176,101 @@
 
 .projectDesc {
   color: #cbd5e1;
-  font-size: 0.94rem;
-  line-height: 1.65;
-  margin-bottom: 20px;
+  font-size: 0.95rem;
+  line-height: 1.68;
+  margin-bottom: 22px;
   flex-grow: 1;
 }
 
 .tagList {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 22px;
 }
 
+/* Sunken Clay Tag Chip */
 .tag {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 3px 10px;
-  border-radius: 6px;
-  font-size: 0.78rem;
+  background: #101421;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
   color: #94a3b8;
-  font-weight: 500;
+  box-shadow: 
+    inset 2px 2px 4px rgba(0, 0, 0, 0.4),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.03);
 }
 
 .cardFooter {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 16px;
+  padding-top: 18px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   margin-top: auto;
 }
 
+/* Puffy Clay Discuss Button */
 .projectLink {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  color: var(--accent-cyan);
+  gap: 8px;
+  color: #032030;
+  background: linear-gradient(145deg, #1fe3ff, #0284c7);
+  padding: 8px 18px;
+  border-radius: 12px;
   text-decoration: none;
   font-family: var(--font-heading);
   font-size: 0.88rem;
-  font-weight: 700;
-  transition: all 0.2s ease;
+  font-weight: 800;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    3px 4px 10px rgba(2, 132, 199, 0.3),
+    inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 4px rgba(3, 105, 161, 0.4);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
 }
 
 .projectLink:hover {
-  color: #ffffff;
-  transform: translateX(3px);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 
+    5px 8px 16px rgba(2, 132, 199, 0.45),
+    inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.7),
+    inset -2px -2px 4px rgba(3, 105, 161, 0.45);
 }
 
+.projectLink:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: var(--clay-btn-active-shadow);
+}
+
+/* Clay Circular GitHub Small Button */
 .githubSmallBtn {
-  color: #94a3b8;
   display: flex;
   align-items: center;
-  transition: color 0.2s ease;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #242a3d, #161a27);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  text-decoration: none;
+  box-shadow: 
+    3px 4px 8px rgba(0, 0, 0, 0.35),
+    inset 1.5px 1.5px 2px rgba(255, 255, 255, 0.12),
+    inset -1.5px -1.5px 3px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .githubSmallBtn:hover {
   color: #ffffff;
+  transform: translateY(-2px) scale(1.1);
+  background: linear-gradient(145deg, #2d354c, #1d2233);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 640px) {

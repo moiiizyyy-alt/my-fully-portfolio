@@ -8,8 +8,10 @@ import styles from "./page.module.css";
 
 export default function Home() {
   const [lahoreTime, setLahoreTime] = useState("");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const updateTime = () => {
       const now = new Date();
       // Pakistan Standard Time is UTC+5
@@ -80,7 +82,7 @@ export default function Home() {
             <p>
               I care about the details on both sides: smooth, polished interfaces on the front, and clean, reliable logic powering them underneath. Whether it's a pixel-perfect landing page or a full multi-page app with a database and backend, I build it end-to-end.
             </p>
-            <p style={{ color: "var(--accent-cyan)", fontWeight: 700 }}>
+            <p style={{ color: "var(--clay-cyan)", fontWeight: 700 }}>
               Let's build something great together — front to back.
             </p>
           </div>
@@ -116,10 +118,10 @@ export default function Home() {
             </a>
 
             <a
-              href="https://www.fiverr.com/sellers/muhammad_moiz_9/"
+              href="https://www.fiverr.com/sellers/muhammad_moiz_9"
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.secondaryBtn}
+              className={styles.fiverrBtn}
             >
               <span>Fiverr Profile</span>
             </a>
@@ -140,17 +142,17 @@ export default function Home() {
         </div>
 
         <div className={styles.statCard}>
-          <div className={styles.statValue} style={{ color: "var(--comic-yellow)" }}>🥇 Gold</div>
+          <div className={styles.statValue} style={{ color: "var(--clay-yellow)" }}>🥇 Gold</div>
           <div className={styles.statLabel}>Course Performance Medal</div>
         </div>
 
         <div className={styles.statCard}>
-          <div className={styles.statValue} style={{ color: "var(--accent-green)" }}>100%</div>
+          <div className={styles.statValue} style={{ color: "var(--clay-green)" }}>100%</div>
           <div className={styles.statLabel}>Client Dedication</div>
         </div>
       </section>
 
-      {/* Stories / Comic Hustle Section */}
+      {/* Stories / Hustle Section */}
       <section className={styles.storiesSection} aria-label="Hustle and Experience">
         {/* Card 1: What I Did When I Was Free */}
         <div className={styles.storyCard}>
@@ -228,8 +230,8 @@ export default function Home() {
             <p>
               Operating from the historic and bustling tech hub of Pakistan. Available for worldwide remote collaboration.
             </p>
-            <p style={{ marginTop: "8px", color: "var(--accent-cyan)", fontFamily: "var(--font-mono)", fontWeight: 700 }}>
-              🕒 Local Time in Lahore: {lahoreTime || "Loading..."} (PKT)
+            <p style={{ marginTop: "10px", color: "var(--clay-cyan)", fontFamily: "var(--font-mono)", fontWeight: 700 }}>
+              🕒 Local Time in Lahore: {mounted ? lahoreTime : "Loading..."} (PKT)
             </p>
           </div>
         </div>
@@ -264,7 +266,7 @@ export default function Home() {
 
       {/* Bottom CTA Banner */}
       <section className={styles.bottomBanner}>
-        <span className={styles.comicStickerBadgePink} style={{ marginBottom: "16px" }}>
+        <span className={styles.comicStickerBadgePink} style={{ marginBottom: "18px" }}>
           Ready to make magic? ✨
         </span>
         <h2 className={styles.bottomBannerTitle}>
@@ -291,6 +293,15 @@ export default function Home() {
           <Link href="/contact" className={styles.secondaryBtn}>
             Send a Direct Message
           </Link>
+
+          <a
+            href="https://www.fiverr.com/sellers/muhammad_moiz_9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.fiverrBtn}
+          >
+            Fiverr Profile
+          </a>
         </div>
       </section>
     </div>

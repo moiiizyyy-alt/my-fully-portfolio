@@ -20,71 +20,93 @@
   align-items: center;
 }
 
+/* 3D Extruded Clay Avatar Frame */
 .avatarWrapper {
   position: relative;
-  width: 280px;
-  height: 280px;
-  border-radius: 30px;
-  padding: 8px;
-  background: linear-gradient(135deg, rgba(0, 242, 254, 0.4), rgba(138, 43, 226, 0.4));
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 242, 254, 0.2);
+  width: 290px;
+  height: 290px;
+  border-radius: 36px;
+  padding: 12px;
+  background: linear-gradient(145deg, #1e263b, #131725);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    16px 20px 40px rgba(0, 0, 0, 0.65),
+    -8px -8px 24px rgba(255, 255, 255, 0.04),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.15),
+    inset -4px -4px 8px rgba(0, 0, 0, 0.5);
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .avatarWrapper:hover {
-  transform: translateY(-6px) rotate(-1deg);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 45px rgba(0, 242, 254, 0.4);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 
+    20px 28px 50px rgba(0, 0, 0, 0.75),
+    -10px -10px 28px rgba(255, 255, 255, 0.06),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.2),
+    inset -4px -4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .avatarImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 22px;
-  background-color: #121420;
+  border-radius: 26px;
+  background-color: #0f131f;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
+/* Puffy Clay Sticker Badge */
 .thisIsMeBadge {
   position: absolute;
-  top: -18px;
-  right: -12px;
-  background: var(--comic-yellow);
-  color: #000;
-  border: 3px solid #000;
+  top: -16px;
+  right: -10px;
+  background: linear-gradient(145deg, #ffd33d, #f59e0b);
+  color: #261600;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 8px 18px;
-  border-radius: 14px;
+  border-radius: 9999px;
   font-family: var(--font-heading);
   font-weight: 900;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-  box-shadow: 4px 4px 0px #000;
-  transform: rotate(6deg);
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  box-shadow: 
+    6px 8px 18px rgba(245, 158, 11, 0.4),
+    -2px -2px 6px rgba(255, 255, 255, 0.15),
+    inset 2.5px 2.5px 4px rgba(255, 255, 255, 0.7),
+    inset -2.5px -2.5px 5px rgba(180, 83, 9, 0.45);
+  transform: rotate(5deg);
   z-index: 10;
-  animation: float 3s ease-in-out infinite;
+  animation: float 3.5s ease-in-out infinite;
+  user-select: none;
 }
 
+/* Puffy Clay Status Pill */
 .statusPill {
-  margin-top: 20px;
+  margin-top: 24px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 18px;
-  background: rgba(18, 20, 32, 0.9);
-  border: 1px solid rgba(0, 230, 118, 0.3);
+  padding: 10px 20px;
+  background: linear-gradient(145deg, #1b2133, #131725);
+  border: 1px solid rgba(34, 197, 94, 0.25);
   border-radius: 9999px;
   font-size: 0.88rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #e2e8f0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 
+    6px 8px 18px rgba(0, 0, 0, 0.45),
+    -3px -3px 8px rgba(255, 255, 255, 0.03),
+    inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.1),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .pulseDot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #00e676;
-  box-shadow: 0 0 10px #00e676;
-  animation: pulseGlow 1.5s infinite;
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e, inset 1px 1px 2px rgba(255, 255, 255, 0.6);
+  animation: pulseGlow 1.8s infinite;
 }
 
 /* Info Column */
@@ -101,9 +123,66 @@
   flex-wrap: wrap;
 }
 
+.comicStickerBadgeYellow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(145deg, #ffd33d, #f59e0b);
+  color: #261600;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 7px 18px;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.92rem;
+  letter-spacing: 0.2px;
+  box-shadow: 
+    4px 6px 14px rgba(245, 158, 11, 0.35),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.65),
+    inset -2.5px -2.5px 5px rgba(180, 83, 9, 0.45);
+}
+
+.comicStickerBadgePink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(145deg, #ff5c98, #e11d48);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 7px 18px;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.92rem;
+  letter-spacing: 0.2px;
+  box-shadow: 
+    4px 6px 14px rgba(225, 29, 72, 0.35),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.55),
+    inset -2.5px -2.5px 5px rgba(159, 18, 57, 0.45);
+}
+
+.comicStickerBadgeCyan {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(145deg, #1fe3ff, #0284c7);
+  color: #032030;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 7px 18px;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.92rem;
+  letter-spacing: 0.2px;
+  box-shadow: 
+    4px 6px 14px rgba(2, 132, 199, 0.35),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.65),
+    inset -2.5px -2.5px 5px rgba(3, 105, 161, 0.45);
+}
+
 .nameTitle {
   font-family: var(--font-heading);
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
   font-weight: 900;
   line-height: 1.15;
   letter-spacing: -0.5px;
@@ -115,20 +194,16 @@
   font-weight: 500;
 }
 
-.highlightMern {
-  color: var(--accent-cyan);
-  font-weight: 700;
-}
-
+/* Clay Bio Card */
 .bioLead {
   font-size: 1.05rem;
   line-height: 1.75;
   color: #cbd5e1;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  padding: 24px;
-  border-radius: 20px;
-  backdrop-filter: blur(12px);
+  background: linear-gradient(145deg, #1b2031, #131725);
+  border: 1px solid var(--border-subtle);
+  padding: 26px;
+  border-radius: 26px;
+  box-shadow: var(--clay-card-shadow);
   position: relative;
 }
 
@@ -140,7 +215,7 @@
   margin-bottom: 0;
 }
 
-/* Quick Action Buttons */
+/* Quick Action Clay Buttons */
 .heroCtaGroup {
   display: flex;
   flex-wrap: wrap;
@@ -148,113 +223,193 @@
   margin-top: 8px;
 }
 
+/* Puffy Clay Cyan Button */
 .primaryBtn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 24px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-  color: #000000;
+  padding: 13px 26px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #1fe3ff, #0284c7);
+  color: #032030;
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 0.95rem;
   text-decoration: none;
-  border: 2px solid #000;
-  box-shadow: 4px 4px 0px #000;
-  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    6px 8px 18px rgba(2, 132, 199, 0.35),
+    -2px -2px 6px rgba(255, 255, 255, 0.08),
+    inset 2.5px 2.5px 4px rgba(255, 255, 255, 0.65),
+    inset -2.5px -2.5px 5px rgba(3, 105, 161, 0.45);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
 }
 
 .primaryBtn:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 7px 7px 0px #000;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    8px 14px 24px rgba(2, 132, 199, 0.5),
+    inset 2.5px 2.5px 4px rgba(255, 255, 255, 0.75),
+    inset -2.5px -2.5px 5px rgba(3, 105, 161, 0.5);
 }
 
+.primaryBtn:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: var(--clay-btn-active-shadow);
+}
+
+/* Puffy Clay WhatsApp Button */
 .whatsappCta {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 22px;
-  border-radius: 12px;
-  background: #25d366;
-  color: #000000;
+  padding: 13px 24px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #2ae070, #15803d);
+  color: #03240e;
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 0.95rem;
   text-decoration: none;
-  border: 2px solid #000;
-  box-shadow: 4px 4px 0px #000;
-  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    6px 8px 18px rgba(34, 197, 94, 0.35),
+    -2px -2px 6px rgba(255, 255, 255, 0.08),
+    inset 2.5px 2.5px 4px rgba(255, 255, 255, 0.65),
+    inset -2.5px -2.5px 5px rgba(21, 128, 61, 0.45);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
 }
 
 .whatsappCta:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 7px 7px 0px #000;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    8px 14px 24px rgba(34, 197, 94, 0.5),
+    inset 2.5px 2.5px 4px rgba(255, 255, 255, 0.75),
+    inset -2.5px -2.5px 5px rgba(21, 128, 61, 0.5);
 }
 
+.whatsappCta:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: var(--clay-btn-active-shadow);
+}
+
+/* Puffy Clay Secondary Button */
 .secondaryBtn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 22px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
+  padding: 13px 22px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #242a3d, #161a27);
+  color: #f1f5f9;
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.95rem;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    6px 8px 18px rgba(0, 0, 0, 0.4),
+    -3px -3px 8px rgba(255, 255, 255, 0.03),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.12),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.45);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
 }
 
 .secondaryBtn:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
+  background: linear-gradient(145deg, #2b3248, #1b2031);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    8px 12px 22px rgba(0, 0, 0, 0.55),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.18),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.45);
+}
+
+.secondaryBtn:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: var(--clay-btn-active-shadow);
+}
+
+/* Puffy Clay Fiverr Button */
+.fiverrBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #1fd27e, #128a50);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    6px 8px 18px rgba(29, 191, 115, 0.35),
+    -2px -2px 6px rgba(255, 255, 255, 0.08),
+    inset 2.5px 2.5px 4px rgba(255, 255, 255, 0.55),
+    inset -2.5px -2.5px 5px rgba(18, 138, 80, 0.45);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
+}
+
+.fiverrBtn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    8px 14px 24px rgba(29, 191, 115, 0.5),
+    inset 2.5px 2.5px 4px rgba(255, 255, 255, 0.65),
+    inset -2.5px -2.5px 5px rgba(18, 138, 80, 0.5);
+}
+
+.fiverrBtn:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: var(--clay-btn-active-shadow);
 }
 
 /* Stats Grid */
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 24px;
   margin-bottom: 60px;
 }
 
 .statCard {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 18px;
-  padding: 22px;
+  background: linear-gradient(145deg, #1b2031, #131725);
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+  padding: 24px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(12px);
-  transition: all 0.3s ease;
+  box-shadow: var(--clay-card-shadow);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .statCard:hover {
-  border-color: var(--accent-cyan);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15);
+  border-color: var(--border-clay-highlight);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--clay-card-hover-shadow);
 }
 
 .statValue {
   font-family: var(--font-heading);
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   font-weight: 900;
   color: #fff;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .statLabel {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: #94a3b8;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-/* Stories & Comic Sections */
+/* Stories & Experience Sections */
 .storiesSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -263,79 +418,28 @@
 }
 
 .storyCard {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 24px;
+  background: linear-gradient(145deg, #1b2031, #131725);
+  border: 1px solid var(--border-subtle);
+  border-radius: 28px;
   padding: 32px;
   position: relative;
-  backdrop-filter: blur(14px);
   display: flex;
   flex-direction: column;
   gap: 20px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--clay-card-shadow);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .storyCard:hover {
-  border-color: rgba(0, 242, 254, 0.4);
+  border-color: var(--border-clay-highlight);
   transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--clay-card-hover-shadow);
 }
 
 .comicHeaderWrapper {
   display: flex;
   align-items: center;
   gap: 12px;
-}
-
-.comicStickerBadgeYellow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--comic-yellow);
-  color: #000000;
-  border: 2.5px solid #000;
-  padding: 8px 16px;
-  border-radius: 12px;
-  font-family: var(--font-heading);
-  font-weight: 900;
-  font-size: 0.95rem;
-  letter-spacing: 0.3px;
-  box-shadow: 4px 4px 0px #000;
-  transform: rotate(-1.5deg);
-}
-
-.comicStickerBadgePink {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--comic-pink);
-  color: #ffffff;
-  border: 2.5px solid #000;
-  padding: 8px 16px;
-  border-radius: 12px;
-  font-family: var(--font-heading);
-  font-weight: 900;
-  font-size: 0.95rem;
-  letter-spacing: 0.3px;
-  box-shadow: 4px 4px 0px #000;
-  transform: rotate(1.5deg);
-}
-
-.comicStickerBadgeCyan {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--comic-cyan);
-  color: #000000;
-  border: 2.5px solid #000;
-  padding: 8px 16px;
-  border-radius: 12px;
-  font-family: var(--font-heading);
-  font-weight: 900;
-  font-size: 0.95rem;
-  letter-spacing: 0.3px;
-  box-shadow: 4px 4px 0px #000;
-  transform: rotate(-1deg);
 }
 
 .storyContent {
@@ -351,13 +455,18 @@
   margin-top: auto;
 }
 
+/* Sunken Clay Tag */
 .techTag {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 4px 12px;
-  border-radius: 8px;
+  background: #111420;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 6px 14px;
+  border-radius: 9999px;
   font-size: 0.82rem;
+  font-weight: 600;
   color: #94a3b8;
+  box-shadow: 
+    inset 2px 2px 4px rgba(0, 0, 0, 0.4),
+    inset -1.5px -1.5px 3px rgba(255, 255, 255, 0.03);
 }
 
 /* Personal Identity Grid (DOB & Location) */
@@ -369,22 +478,23 @@
 }
 
 .identityCard {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 24px;
+  background: linear-gradient(145deg, #1b2031, #131725);
+  border: 1px solid var(--border-subtle);
+  border-radius: 28px;
   padding: 32px;
-  backdrop-filter: blur(14px);
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition: all 0.3s ease;
+  box-shadow: var(--clay-card-shadow);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .identityCard:hover {
-  border-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-3px);
+  border-color: var(--border-clay-highlight);
+  transform: translateY(-4px);
+  box-shadow: var(--clay-card-hover-shadow);
 }
 
 .identityMainVal {
@@ -400,7 +510,7 @@
 .identitySubText {
   color: #94a3b8;
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* Vibe Section */
@@ -412,71 +522,82 @@
 }
 
 .vibeCard {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 24px;
+  background: linear-gradient(145deg, #1b2031, #131725);
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+  padding: 26px;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  backdrop-filter: blur(14px);
-  transition: all 0.3s ease;
+  box-shadow: var(--clay-card-shadow);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .vibeCard:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 242, 254, 0.35);
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--border-clay-highlight);
+  box-shadow: var(--clay-card-hover-shadow);
 }
 
+/* 3D Embossed Emoji Box */
 .vibeIconBox {
-  width: 50px;
-  height: 50px;
-  border-radius: 14px;
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  font-size: 1.6rem;
+  background: linear-gradient(145deg, #242b3e, #141724);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    4px 6px 12px rgba(0, 0, 0, 0.4),
+    -2px -2px 6px rgba(255, 255, 255, 0.03),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.15),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.45);
 }
 
 .vibeTitle {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.22rem;
   font-weight: 800;
   color: #fff;
 }
 
 .vibeDesc {
   color: #94a3b8;
-  font-size: 0.92rem;
-  line-height: 1.6;
+  font-size: 0.93rem;
+  line-height: 1.65;
 }
 
 /* Bottom CTA Banner */
 .bottomBanner {
-  background: linear-gradient(135deg, rgba(18, 20, 36, 0.95), rgba(15, 17, 28, 0.95));
-  border: 1.5px solid rgba(0, 242, 254, 0.3);
-  border-radius: 28px;
-  padding: 48px 36px;
+  background: linear-gradient(145deg, #1d2336, #141825);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 32px;
+  padding: 50px 36px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 242, 254, 0.1);
+  box-shadow: 
+    16px 24px 50px rgba(0, 0, 0, 0.65),
+    -8px -8px 24px rgba(255, 255, 255, 0.04),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.15),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.5);
 }
 
 .bottomBannerTitle {
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 900;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .bottomBannerSub {
   color: #94a3b8;
   font-size: 1.1rem;
   max-width: 650px;
-  margin: 0 auto 28px auto;
+  margin: 0 auto 30px auto;
 }
 
 .bannerButtons {
@@ -517,13 +638,13 @@
 
 @media (max-width: 540px) {
   .avatarWrapper {
-    width: 220px;
-    height: 220px;
+    width: 230px;
+    height: 230px;
   }
 
   .thisIsMeBadge {
     font-size: 0.85rem;
-    padding: 6px 12px;
+    padding: 6px 14px;
   }
 
   .nameTitle {

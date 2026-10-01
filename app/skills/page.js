@@ -22,9 +22,9 @@ const SKILL_CATEGORIES = [
         grip: "95% Mastery",
         percentage: 95,
         whatItDoes:
-          "Provides visual aesthetics, layout engines (Flexbox & CSS Grid), keyframe animations, glassmorphism, responsive breakpoints, and CSS variables.",
+          "Provides visual aesthetics, layout engines (Flexbox & CSS Grid), keyframe animations, claymorphism, responsive breakpoints, and CSS variables.",
         myGrip:
-          "Deep mastery of complex layouts, custom animations, dark mode themes, and responsive design systems without layout breaking.",
+          "Deep mastery of complex layouts, custom 3D animations, dark mode claymorphism themes, and responsive design systems without layout breaking.",
       },
       {
         name: "JavaScript (ES6+)",
