@@ -636,26 +636,130 @@
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 640px) {
+  .mainContainer {
+    padding: 24px 16px 140px 16px;
+  }
+
+  .heroSection {
+    margin-bottom: 40px;
+  }
+
   .avatarWrapper {
-    width: 230px;
-    height: 230px;
+    width: 220px;
+    height: 220px;
+    border-radius: 28px;
+    padding: 10px;
   }
 
   .thisIsMeBadge {
-    font-size: 0.85rem;
-    padding: 6px 14px;
+    font-size: 0.82rem;
+    padding: 5px 12px;
+    right: -4px;
+    top: -10px;
   }
 
   .nameTitle {
-    font-size: 2rem;
+    font-size: 2.1rem;
+  }
+
+  .subHeading {
+    font-size: 1.05rem;
+  }
+
+  .bioLead {
+    padding: 20px 18px;
+    font-size: 0.95rem;
+    border-radius: 20px;
+  }
+
+  .heroCtaGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .primaryBtn,
+  .whatsappCta,
+  .secondaryBtn,
+  .fiverrBtn {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+
+  .statCard {
+    padding: 18px 14px;
+    border-radius: 18px;
+  }
+
+  .statValue {
+    font-size: 1.8rem;
+  }
+
+  .statLabel {
+    font-size: 0.82rem;
+  }
+
+  .storyCard,
+  .identityCard,
+  .vibeCard {
+    padding: 22px 18px;
+    border-radius: 22px;
+    gap: 16px;
+  }
+
+  .identityMainVal {
+    font-size: 1.7rem;
+  }
+
+  .bottomBanner {
+    padding: 32px 18px;
+    border-radius: 24px;
+  }
+
+  .bottomBannerTitle {
+    font-size: 1.6rem;
+  }
+
+  .bottomBannerSub {
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+  }
+
+  .bannerButtons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .bannerButtons a {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .mainContainer {
+    padding: 18px 12px 140px 12px;
   }
 
   .statsGrid {
     grid-template-columns: 1fr;
   }
 
-  .identityMainVal {
-    font-size: 1.7rem;
+  .avatarWrapper {
+    width: 190px;
+    height: 190px;
+  }
+
+  .nameTitle {
+    font-size: 1.85rem;
   }
 }

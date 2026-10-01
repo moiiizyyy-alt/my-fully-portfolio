@@ -106,11 +106,10 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+            <div className={styles.emailActionsRow}>
               <a
                 href="mailto:moiiizyyy@gmail.com"
-                className={`${styles.channelBtn} ${styles.emailBtnStyle}`}
-                style={{ flex: 1 }}
+                className={`${styles.channelBtn} ${styles.emailBtnStyle} ${styles.emailBtn}`}
               >
                 <span>Send Email</span>
               </a>
@@ -118,7 +117,7 @@ export default function ContactPage() {
               <button
                 type="button"
                 onClick={handleCopyEmail}
-                className={`${styles.channelBtn} ${styles.copyBtnStyle}`}
+                className={`${styles.channelBtn} ${styles.copyBtnStyle} ${styles.copyBtn}`}
               >
                 <span>{copied ? "Copied! ✓" : "Copy Address"}</span>
               </button>
@@ -126,14 +125,14 @@ export default function ContactPage() {
           </div>
 
           {/* Fiverr & GitHub Grid */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+          <div className={styles.miniCardsGrid}>
             {/* Fiverr */}
             <div className={styles.channelCard}>
               <div className={styles.miniCardTop}>
                 <div className={styles.fiverrPill}>Fiverr Pro</div>
               </div>
               <h3 className={styles.channelTitle}>Fiverr Seller</h3>
-              <p style={{ color: "#94a3b8", fontSize: "0.86rem" }}>
+              <p className={styles.channelSubtext}>
                 Order verified client gigs & custom milestone projects
               </p>
               <a
@@ -155,7 +154,7 @@ export default function ContactPage() {
                 <div className={styles.githubPill}>Code Repo</div>
               </div>
               <h3 className={styles.channelTitle}>GitHub Profile</h3>
-              <p style={{ color: "#94a3b8", fontSize: "0.86rem" }}>
+              <p className={styles.channelSubtext}>
                 Explore open-source repositories & project code
               </p>
               <a
